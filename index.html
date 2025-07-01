@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- Declaração do tipo de documento HTML5 -->
+<html lang="pt">
+<!-- Elemento raiz do documento com definição de idioma (português) -->
+
+<head>
+    <!-- Cabeçalho do documento - metadados e links para recursos -->
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 (suporta caracteres especiais) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura viewport para responsividade em dispositivos móveis -->
+    <title>Questionário Interativo</title>
+    <!-- Título da página que aparece na aba do navegador -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Link para o arquivo CSS de estilos -->
+</head>
+
+<body>
+    <!-- Corpo do documento - conteúdo visível da página -->
+
+    <!-- Barra fixa no topo da página -->
+    <div class="header-fixed-bar">
+        <!-- Controles principais do questionário -->
+        <div class="controls">
+            <!-- Input para carregar arquivo do questionário -->
+            <label for="quizFile">Arquivo:</label>
+            <input type="file" id="quizFile" accept=".txt, .md" aria-label="Carregar arquivo de questionário">
+            
+            <!-- Input para definir tempo do questionário -->
+            <label for="quizTime">Tempo (min):</label>
+            <input type="number" id="quizTime" value="10" min="1" aria-label="Definir tempo limite para o questionário em minutos">
+            
+            <!-- Display do temporizador -->
+            <span id="timerDisplay" class="timer-display" aria-live="polite" aria-atomic="true">00:00</span>
+        </div>
+
+        <!-- Seção de progresso (inicialmente oculta) -->
+        <div id="progressSection" style="display: none;">
+            <div class="progress-text">
+                <!-- Contador de perguntas respondidas/total -->
+                <span id="currentQuestionCount">0</span> de <span id="totalQuestionsCount">0</span>
+            </div>
+            <!-- Barra de progresso visual -->
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar" role="progressbar" 
+                     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" 
+                     aria-label="Progresso do questionário"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container principal do conteúdo -->
+    <div class="container">
+        <!-- Título do questionário -->
+        <h1>Questionário Interativo</h1>
+        
+        <!-- Área para mensagens de erro -->
+        <p id="errorMessage" class="error-message"></p>
+
+        <!-- Formulário dinâmico onde as perguntas serão renderizadas -->
+        <div id="quizForm">
+        </div>
+
+        <!-- Grupo de botões de ação (inicialmente ocultos) -->
+        <div class="button-group">
+            <!-- Botão para submeter o questionário -->
+            <button id="submitQuiz" style="display: none;" 
+                    aria-label="Finalizar questionário e ver resultados">
+                Finalizar Questionário
+            </button>
+            
+            <!-- Botão para reiniciar o questionário -->
+            <button id="restartQuizBtn" style="display: none;" 
+                    aria-label="Reiniciar o questionário e carregar um novo arquivo">
+                Reiniciar Questionário
+            </button>
+        </div>
+
+        <!-- Área onde os resultados serão exibidos -->
+        <div id="results">
+        </div>
+    </div>
+
+    <!-- Script JavaScript principal -->
+    <script src="js/main.js"></script>
+    <script src="js/quiz-parser.js"></script>
+</body>
+</html>

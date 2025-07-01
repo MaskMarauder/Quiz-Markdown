@@ -1,0 +1,248 @@
+/* ============================================= */
+/* ESTILOS GERAIS E LAYOUT PRINCIPAL */
+/* ============================================= */
+
+/* Estilos base para o corpo do documento */
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif; /* Fonte moderna e legível */
+    background-color: #1e2b33;                 /* Fundo escuro azulado */
+    color: #e0f2f1;                           /* Texto verde-água claro */
+    margin: 0;                                /* Remove margens padrão */
+    padding-top: 100px;                       /* Espaço para o cabeçalho fixo */
+    display: flex;
+    justify-content: center;                  /* Centraliza o conteúdo */
+    min-height: 100vh;                        /* Garante altura total da viewport */
+}
+
+/* Container principal do questionário */
+.container {
+    background-color: #2c3e50;                /* Fundo azul mais escuro */
+    padding: 40px;                            /* Espaçamento interno generoso */
+    border-radius: 10px;                      /* Bordas arredondadas */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);  /* Sombra para efeito de profundidade */
+    max-width: 800px;                         /* Largura máxima para legibilidade */
+    width: 100%;                              /* Ocupa toda a largura disponível */
+    line-height: 1.7;                         /* Espaçamento entre linhas aumentado */
+}
+
+/* Título principal */
+h1 {
+    text-align: center;                       /* Centraliza o título */
+    color: #80cbc4;                          /* Cor verde-água */
+    font-size: 2em;                           /* Tamanho aumentado */
+    margin-bottom: 30px;                      /* Espaço abaixo do título */
+}
+
+/* ============================================= */
+/* CABEÇALHO FIXO E CONTROLES */
+/* ============================================= */
+
+/* Barra fixa no topo com controles */
+.header-fixed-bar {
+    position: fixed;                          /* Fixa no topo da página */
+    top: 0;
+    left: 0;
+    width: 100%;                              /* Largura total */
+    background-color: #263238;                /* Cor de fundo escura */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);  /* Sombra sutil */
+    padding: 20px 30px;                       /* Espaçamento interno */
+    z-index: 1000;                            /* Garante que fique acima de outros elementos */
+    border-bottom: 1px solid #37474f;         /* Borda sutil na parte inferior */
+    color: #ffffff;                           /* Texto branco */
+    box-sizing: border-box;                   /* ESSENCIAL: inclui padding na largura total */
+}
+
+/* Estilo para o display do timer */
+.timer-display {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ff8a65;                           /* Cor laranja para destaque */
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Barra de progresso e texto */
+.progress-container {
+    background-color: #455a64;                /* Fundo cinza azulado */
+    height: 8px;                              /* Altura fina */
+    border-radius: 4px;                       /* Bordas arredondadas */
+    margin-top: 15px;                         /* Espaço acima da barra */
+    overflow: hidden;                         /* Esconde conteúdo que ultrapassar */
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;                                /* Inicia em 0% */
+    background-color: #80cbc4;                /* Cor verde-água para progresso */
+    transition: width 0.3s ease-in-out;       /* Animação suave */
+}
+
+.progress-text {
+    text-align: right;                        /* Alinha o texto à direita */
+    font-size: 0.9em;                         /* Tamanho menor */
+    color: #b0bec5;                           /* Cor cinza claro */
+    margin-top: 5px;                          /* Pequeno espaço acima */
+}
+
+/* ============================================= */
+/* BLOCOS DE PERGUNTAS */
+/* ============================================= */
+
+/* Estilo para cada bloco de pergunta */
+.question-block {
+    background-color: #32444f;                /* Fundo azul acinzentado */
+    border: 1px solid #4f6367;                /* Borda sutil */
+    border-radius: 8px;                       /* Bordas arredondadas */
+    padding: 25px;                            /* Espaçamento interno */
+    margin-bottom: 30px;                      /* Espaço entre perguntas */
+}
+
+/* Texto da pergunta */
+.question-block p.question-text {
+    font-weight: 600;                         /* Peso semi-negrito */
+    font-size: 1.2em;                         /* Tamanho aumentado */
+    color: #a5d6a7;                           /* Verde claro para destaque */
+    margin-bottom: 15px;                      /* Espaço abaixo do texto */
+}
+
+/* Blocos de código nas perguntas */
+pre.code-snippet {
+    background-color: #263238;                /* Fundo muito escuro */
+    padding: 15px;                            /* Espaçamento interno */
+    border-radius: 5px;                       /* Bordas levemente arredondadas */
+    font-family: 'Courier New', monospace;    /* Fonte monoespaçada para código */
+    font-size: 0.95em;                        /* Tamanho ligeiramente reduzido */
+    overflow-x: auto;                         /* Barra de rolagem horizontal se necessário */
+    border-left: 5px solid #4db6ac;           /* Borda lateral como destaque */
+    color: #eceff1;                           /* Texto branco gelo */
+}
+
+/* ============================================= */
+/* OPÇÕES DE RESPOSTA */
+/* ============================================= */
+
+/* Lista de opções */
+.options-list {
+    list-style: none;                         /* Remove marcadores padrão */
+    padding: 0;                               /* Remove padding padrão */
+    margin: 0;                                /* Remove margem padrão */
+}
+
+/* Itens individuais da lista */
+.options-list li {
+    margin-bottom: 12px;                      /* Espaço entre opções */
+}
+
+/* Labels das opções (que contêm os radio buttons) */
+.options-list label {
+    display: block;                           /* Ocupa toda a largura */
+    padding: 12px 15px;                       /* Espaçamento interno */
+    border: 1px solid #546e7a;                /* Borda sutil */
+    background-color: #455a64;                /* Fundo cinza azulado */
+    border-radius: 6px;                       /* Bordas arredondadas */
+    cursor: pointer;                          /* Cursor de apontar */
+    transition: all 0.2s ease;                /* Transição suave para hover */
+    font-size: 1em;                           /* Tamanho normal de texto */
+    color: #eceff1;                           /* Texto branco gelo */
+}
+
+/* Efeito hover nas opções */
+.options-list label:hover {
+    background-color: #546e7a;                /* Fundo mais claro */
+    border-color: #80cbc4;                    /* Borda verde-água */
+}
+
+/* Estilização dos radio buttons */
+.options-list input[type="radio"] {
+    margin-right: 10px;                       /* Espaço entre o radio e o texto */
+    accent-color: #4db6ac;                    /* Cor personalizada para o radio */
+}
+
+/* ============================================= */
+/* BOTÕES E CONTROLES */
+/* ============================================= */
+
+/* Container dos botões */
+.button-group {
+    display: flex;                            /* Layout flexível */
+    justify-content: center;                  /* Centraliza os botões */
+    gap: 20px;                                /* Espaço entre botões */
+    margin-top: 30px;                         /* Espaço acima dos botões */
+}
+
+/* Estilo base para todos os botões */
+.button-group button {
+    color: white;                           /* Texto branco */
+    padding: 12px 30px;                       /* Espaçamento interno generoso */
+    font-size: 1em;                           /* Tamanho normal */
+    border: none;                             /* Remove borda padrão */
+    border-radius: 6px;                       /* Bordas arredondadas */
+    cursor: pointer;                          /* Cursor de apontar */
+    transition: all 0.3s ease;                /* Transição suave */
+}
+
+
+
+/* Input para carregar arquivo do questionário */
+#quizFile {
+    background-color: #455a64;              /* cinza azulado */
+    border: none;                             /* Remove borda padrão */
+    border-radius: 6px;                       /* Bordas arredondadas */
+    
+}
+
+#quizFile:hover {
+    background-color: #546e7a;              /* Verde mais escuro no hover */
+}
+
+
+
+
+
+/* Botão de submissão principal */
+#submitQuiz {
+    background-color: #388e3c;                /* Verde escuro */
+}
+
+#submitQuiz:hover {
+    background-color: #2e7d32;                /* Verde mais escuro no hover */
+}
+
+/* Botão de reiniciar */
+#restartQuizBtn {
+    background-color: #ef6c00;                /* Laranja */
+}
+
+#restartQuizBtn:hover {
+    background-color: #e65100;                /* Laranja mais escuro no hover */
+}
+
+/* ============================================= */
+/* SEÇÃO DE RESULTADOS */
+/* ============================================= */
+
+/* Container de resultados (inicialmente oculto) */
+#results {
+    margin-top: 40px;                         /* Espaço acima do container */
+    padding: 25px;                            /* Espaçamento interno */
+    border-radius: 10px;                      /* Bordas arredondadas */
+    text-align: center;                       /* Texto centralizado */
+    font-size: 1.2em;                         /* Tamanho aumentado */
+    color: #ffffff;                           /* Texto branco */
+    font-weight: bold;                        /* Negrito para destaque */
+    display: none;                            /* Oculto por padrão */
+}
+
+/* Variante para resultado aprovado */
+#results.approved {
+    background-color: #2e7d32;                /* Verde escuro */
+    border-color: #81c784;                    /* Borda verde mais clara */
+    color: #e8f5e9;                           /* Texto verde muito claro */
+}
+
+/* Variante para resultado reprovado */
+#results.reproved {
+    background-color: #6d4c41;                /* Marrom */
+    border-color: #bcaaa4;                    /* Borda marrom clara */
+    color: #ffe082;                           /* Texto amarelo claro */
+}
